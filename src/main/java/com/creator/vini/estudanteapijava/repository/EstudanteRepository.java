@@ -10,10 +10,10 @@ import java.util.Optional;
 
 @Repository
 public interface EstudanteRepository extends JpaRepository<Estudante, Long> {
-    @Query("SELECT c FROM Estudante c WHERE c.nome = nome")
+    @Query(value = "SELECT c FROM Estudante c WHERE c.nome = :name", nativeQuery = false)
     Optional<Estudante> findByName(String name);
 
-    @Query("SELECT c FROM Estudante c WHERE c.curso = curso")
+    @Query("SELECT c FROM Estudante c WHERE c.curso = :curso")
     List<Estudante> findByCurso(String curso);
 
 
