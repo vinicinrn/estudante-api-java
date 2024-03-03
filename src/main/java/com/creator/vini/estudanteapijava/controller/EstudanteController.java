@@ -41,15 +41,15 @@ public class EstudanteController {
         return estudanteService.atualizarEstudantePeloID(estudante, id);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/estudantes/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseEntity<Object> excluirEstudantePeloId (@PathVariable(value =     "id") Long id){
+    public ResponseEntity<Object> excluirEstudantePeloId (@PathVariable(value ="id") Long id){
         return estudanteService.excluirEstudantePeloId(id);
     }
 
     @GetMapping("/estudantes/nome/{nome}") //pegar o NOME especifico, usar @PathVariable
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<Estudante> listarEstudantes (@PathVariable(value = "nome") String nome){
+    public ResponseEntity<Estudante> buscarEstudantePeloNome (@PathVariable(value = "nome") String nome){
         return estudanteService.buscarEstudantePeloNome(nome);
     }
 
