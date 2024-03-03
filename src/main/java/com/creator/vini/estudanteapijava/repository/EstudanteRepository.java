@@ -16,5 +16,6 @@ public interface EstudanteRepository extends JpaRepository<Estudante, Long> {
     @Query("SELECT c FROM Estudante c WHERE c.curso = :curso")
     List<Estudante> findByCurso(String curso);
 
+    List<Estudante> findByNomeStartingWith(String nome);
 
 }

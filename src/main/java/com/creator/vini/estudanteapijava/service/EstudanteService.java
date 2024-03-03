@@ -55,8 +55,13 @@ public class EstudanteService {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    //ADICIONAR TRATAMENTO PARA ERRO 404
     public List<Estudante> listarEstudantePeloCurso(String curso){
         return estudanteRepository.findByCurso(curso);
+    }
+
+    public List<Estudante> listarEstudantesPeloComecoDoNome(String comecoNome){
+        return estudanteRepository.findByNomeStartingWith(comecoNome);
     }
 
 }
