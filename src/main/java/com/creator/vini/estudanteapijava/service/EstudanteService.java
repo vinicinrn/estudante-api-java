@@ -64,4 +64,15 @@ public class EstudanteService {
         return estudanteRepository.findByNomeStartingWith(comecoNome);
     }
 
+    public List<Estudante> listarEstudantesPeloComecoDoNomeECurso(String comecoNome, String curso){
+        return estudanteRepository.findByNomeStartingWithAndCurso(comecoNome, curso);
+    }
+
+    public List<Estudante> listarEstudantesPeloEndereco(String endereco){
+        return estudanteRepository.findByEnderecoStartingwithWithOrderByEnderecoDesc(endereco);
+    }
+
+    public List<Estudante> listarPrimeirosEstudantes(Long id){
+        return estudanteRepository.findByIdLessThanEqual(id);
+    }
 }

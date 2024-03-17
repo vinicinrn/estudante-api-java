@@ -18,4 +18,9 @@ public interface EstudanteRepository extends JpaRepository<Estudante, Long> {
 
     List<Estudante> findByNomeStartingWith(String nome);
 
+    List<Estudante> findByNomeStartingWithAndCurso(String nome, String curso);
+
+    List<Estudante> findByEnderecoStartingwithWithOrderByEnderecoDesc(String endereco);
+
+    List<Estudante> findByIdLessThanEqual(Long id);
 }

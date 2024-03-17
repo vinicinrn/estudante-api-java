@@ -64,4 +64,24 @@ public class EstudanteController {
     public List<Estudante> listarEstudantesPeloComecoNome (@RequestParam String comeco_nome){
         return estudanteService.listarEstudantesPeloComecoDoNome(comeco_nome);
     }
+
+    @GetMapping("/estudantes/curso-nome")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Estudante> listarEstudantesPeloComecoNomeECurso (@RequestParam String comeco_nome,
+                                                                 @RequestParam String curso){
+        return estudanteService.listarEstudantesPeloComecoDoNomeECurso(comeco_nome, curso);
+    }
+
+    @GetMapping("/estudantes/endereco")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Estudante> listarEstudantesPeloEndereco (@RequestParam String endereco){
+        return estudanteService.listarEstudantesPeloEndereco(endereco);
+    }
+
+    @GetMapping("/estudantes/promo")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Estudante> listarPrimeirosEstudantes (@RequestParam Long id){
+        return estudanteService.listarPrimeirosEstudantes(id);
+    }
+
 }
